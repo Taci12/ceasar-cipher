@@ -41,7 +41,7 @@ def ceasar_cypher(string, key)
         elsif !(char == char.capitalize)  #if char is downcase
             char_code = low_char_hash[char] + key #cyphered char code        
             if char_code > 25 
-                new_array[i] = low_int_hash[char_code - 25]
+                new_array[i] = low_int_hash[char_code - 26]
             else
                 new_array[i] = low_int_hash[char_code]
             end
@@ -49,7 +49,7 @@ def ceasar_cypher(string, key)
         else #if char is upcase
             char_code = upper_char_hash[char] + key #same steps as downcase
             if(char_code > 25)
-                new_array[i] = upper_int_hash[char_code - 25]
+                new_array[i] = upper_int_hash[char_code - 26]
             else
                 new_array[i] = upper_int_hash[char_code]
             end 
@@ -59,5 +59,5 @@ def ceasar_cypher(string, key)
     new_array.join("")
 end
 
-cyphered_hello = ceasar_cypher('Hello', 1) 
+cyphered_hello = ceasar_cypher('ZzZAaA', 1) 
 p "#{cyphered_hello}"
